@@ -20,7 +20,7 @@ const queries = [
 
   Voter.find().sort('-last').where('zip').equals('13617').limit(1),
 
-  Voter.distinct('zip').coutn()
+  Voter.distinct('zip').count()
 
 
 
