@@ -18,7 +18,7 @@ const queries = [
 
   Voter.find().where('history').in('GE16'),
 
-  Voter.find().count().distinct('zip')
+  Voter.find().distinct('zip').count()
 
   //Voter.sort('last').find().where('zip').equals(13617).last()
 
