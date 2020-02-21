@@ -21,7 +21,6 @@ file.on('line', function(line) {
           zip: Number(columns[2]),
           history: colums.slice(3)
     });
-
   );
 });
 
