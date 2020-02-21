@@ -31,7 +31,7 @@ Promise.all(queries)
     console.log('Registered voters: ', results[0]);
     console.log('Voters with name STARR: ', results[1].map(v => (v.first + " " + v.last)));
     console.log('2016 general election Voters: ', results[2]);
-    console.log('Last something: ', results[4].map(v => v.last));
-    console.log('Distinct zip codes: ', results[3]);
+    console.log('Last something: ', results[3].map(v => v.last));
+    console.log('Distinct zip codes: ', results[4]);
     mongoose.connection.close();
   }).catch(error => console.error(error.stack));
