@@ -18,9 +18,9 @@ const queries = [
 
   Voter.find().where('history').in('GE16'),
 
-  Voter.distinct('zip').length()
+  Voter.distinct('zip').length
 
-  //Voter.find().sort('last').where('zip').equals(13617)
+  Voter.find().sort('-last').where('zip').equals(13617).limit(1)
 
 ]
 
@@ -30,6 +30,6 @@ Promise.all(queries)
     console.log('Voters with name STARR: ', results[1]);
     console.log(' 2016 general election Voters: ', results[2]);
     console.log('Distinct zip codes: ', results[3]);
-    //onsole.log('Last something: ', results[4]);
+    console.log('Last something: ', results[4]);
     mongoose.connection.close();
   }).catch(error => console.error(error.stack));
