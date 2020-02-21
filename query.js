@@ -12,9 +12,9 @@ query.exec(function(error, professors) {
 });*/
 
 const queries = [
-  Voter.count()
+  Voter.count(),
 
-  Voter.find().where('first').equals('STARR'),
+  Voter.find().where('first').equals('STARR')
 
   //Voter.find().where('history').in('GE16')
 
