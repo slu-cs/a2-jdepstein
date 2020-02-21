@@ -20,7 +20,7 @@ const queries = [
 
   Voter.find().distinct('zip'),
 
-  Voter.sort('last').find().where('zip').equals(13617).last()
+  Voter.find().sort('last').where('zip').equals(13617)
 
 ]
 
