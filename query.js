@@ -27,7 +27,7 @@ const queries = [
 Promise.all(queries)
   .then(function(results) {
     console.log('Registered voters: ', results[0]);
-    console.log('Voters with name STARR: ', results[1].map(v => (v.first, v.last)));
+    console.log('Voters with name STARR: ', results[1].map(v => (v.first + " " + v.last)));
     console.log('2016 general election Voters: ', results[2]);
     console.log('Distinct zip codes: ', results[3]);
     console.log('Last something: ', results[4].map(v => v.last));
