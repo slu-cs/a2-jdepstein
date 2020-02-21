@@ -12,7 +12,7 @@ query.exec(function(error, professors) {
 });*/
 
 const queries = [
-  Voter.count(),
+  Voter.find().where('zip').equals('13617')count(),
 
   Voter.find().where('first').equals('STARR'),
 
@@ -20,7 +20,7 @@ const queries = [
 
   Voter.distinct('zip').count(),
 
-  Voter.find().sort('-last').where('zip').equals(13617).limit(1)
+  Voter.find().sort('-last').where('zip').equals('13617').limit(1)
 
 ];
 
@@ -28,7 +28,7 @@ Promise.all(queries)
   .then(function(results) {
     console.log('Registered voters: ', results[0]);
     console.log('Voters with name STARR: ', results[1].map(v => v.first));
-    console.log(' 2016 general election Voters: ', results[2]);
+    console.log('2016 general election Voters: ', results[2]);
     console.log('Distinct zip codes: ', results[3]);
     console.log('Last something: ', results[4].map(v => v.last));
     mongoose.connection.close();
