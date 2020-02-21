@@ -2,7 +2,7 @@ const fs = require('fs');
 const readline = require('readline');
 const mongoose = require('mongoose');
 const connect = require('./db');
-const Professor = require('./schema');
+const Voter = require('./schema');
 
 connect(); // To the database
 
