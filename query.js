@@ -22,7 +22,7 @@ const queries = [
 
   Voter.find().sort('-last').where('zip').equals(13617).limit(1)
 
-]
+];
 
 Promise.all(queries)
   .then(function(results) {
