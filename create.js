@@ -29,10 +29,9 @@ file.on('line', function(line) {
 // Let the popularity score for a discipline be the number of majors it has plus half the number of minors.
 // Sort disciplines by (increasing) popularity.
 
-const saves = rows.map(d => d.save());
+const saves = votes.map(d => d.save());
 mongoose.connection.dropDatabase()
     Promise.all(saves))
-    .then(() => console.log('All saved'))
     .then(() => mongoose.connection.close())
     .then(() => console.log('Database is ready.'))
     .catch(error => console.log(error.stack));
