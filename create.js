@@ -18,9 +18,9 @@ file.on('line', function(line) {
         new Voter({
           first: columns[0],
           last: columns[1],
-          zip: Number(columns[2]),
+          zip: columns[2],
           history: columns.slice(3)
-    })
+    }).save()
   );
 });
 
@@ -29,7 +29,7 @@ file.on('line', function(line) {
 
 file.on('close', function() {
 mongoose.connection.dropDatabase()
-    .then(() => Promise.all(votes.map(d => d.save())))
+    .then(() => Promise.all(votes))
     .then(() => mongoose.connection.close())
     .then(() => console.log('Database is ready.'))
     .catch(error => console.log(error.stack));
