@@ -12,7 +12,7 @@ query.exec(function(error, professors) {
 });*/
 
 const queries = [
-  Voter.find().where('zip').equals('13617')count(),
+  Voter.find().where('zip').equals('13617').count(),
 
   Voter.find().where('first').equals('STARR'),
 
