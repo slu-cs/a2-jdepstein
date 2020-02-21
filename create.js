@@ -16,11 +16,11 @@ counter = 0
 file.on('line', function(line) {
   const columns = line.split(',');
   votes.push({
-    const counter = new Voter({
+      new Voter({
       first: columns[0],
       last: columns[1],
       zip: Number(columns[2]),
-      history:colums[2:]
+      history:colums[3:]
     });
     counter += 1
   });
