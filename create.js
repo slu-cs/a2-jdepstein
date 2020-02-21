@@ -19,8 +19,8 @@ file.on('line', function(line) {
           first: columns[0],
           last: columns[1],
           zip: Number(columns[2]),
-          history: colums.slice(3)
-    });
+          history: columns.slice(3)
+    })
   );
 });
 
