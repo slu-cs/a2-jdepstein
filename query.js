@@ -4,14 +4,9 @@ const Voter = require('./schema');
 
 connect(); // To the database
 
-/*// What documents are in the collection?
-const query = Professor.find();
-query.exec(function(error, professors) {
-  if (error) console.error(error.stack);
-  console.log(professors);
-});*/
 
 const queries = [
+
   //1)
   Voter.find().where('zip').equals('13617'),
 
@@ -29,6 +24,7 @@ const queries = [
 
 ];
 
+//Promise all the Queries 
 Promise.all(queries)
   .then(function(results) {
     console.log('Number of registered voters in Canton: ', results[0].length);

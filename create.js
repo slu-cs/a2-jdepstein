@@ -6,11 +6,14 @@ const Voter = require('./schema');
 
 connect(); // To the database
 
+// Set up the voters file
 const file = readline.createInterface({
   input: fs.createReadStream('voters.csv')
 
 });
 
+
+//Read through the voters csv and make voter objects
 const votes = [];
 file.on('line', function(line) {
   const columns = line.split(',');
@@ -25,7 +28,7 @@ file.on('line', function(line) {
 });
 
 
-
+// Promise all and save() the voter objects 
 file.on('close', function() {
 mongoose.connection.dropDatabase()
     .then(() => Promise.all(votes.map(d => d.save())))
