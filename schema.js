@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose');
 
-// Schema for a collection of professors
+// Schema for a collection of voters
 const Voter = new mongoose.Schema({
     first: String,
     last: String,
