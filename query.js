@@ -12,14 +12,19 @@ query.exec(function(error, professors) {
 });*/
 
 const queries = [
+  //1)
   Voter.find().where('zip').equals('13617'),
 
+  //2)
   Voter.find().where('first').equals('STARR'),
 
+  //3)
   Voter.find().where('history').in('GE16'),
 
+  //4)
   Voter.find().sort('-last').limit(1),
 
+  //5)
   Voter.distinct('zip')
 
 
