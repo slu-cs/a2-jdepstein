@@ -19,7 +19,7 @@ const queries = [
   Voter.find().where('first').equals('STARR'),
 
   //3)
-  Voter.findOne({"history":{$regex:".*GE16.*"}}),
+  Voter.find({"history":{$regex: '.*GE16.*''}}),
 
   //4)
   Voter.find().sort('-last').limit(1),
