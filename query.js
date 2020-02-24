@@ -14,7 +14,7 @@ const queries = [
   Voter.find().where('first').equals('STARR'),
 
   //3)
-  Voter.find({"history":{$regex: '.*GE16.*'}}),
+  Voter.find.where('history').in('GE16'),
 
   //4)
   Voter.find().sort('-last').limit(1),
@@ -24,7 +24,7 @@ const queries = [
 
 ];
 
-//Promise all the Queries 
+//Promise all the Queries
 Promise.all(queries)
   .then(function(results) {
     console.log('Number of registered voters in Canton: ', results[0].length);
