@@ -28,7 +28,7 @@ file.on('line', function(line) {
 });
 
 
-// Promise all and save() the voter objects 
+// Promise all and save() the voter objects
 file.on('close', function() {
 mongoose.connection.dropDatabase()
     .then(() => Promise.all(votes.map(d => d.save())))
