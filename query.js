@@ -14,7 +14,7 @@ const queries = [
   Voter.find().where('first').equals('STARR'),
 
   //3)
-  Voter.find().where('history').in('GE16').count(),
+  Voter.find().where('history').in('GE16').countDocuments(),
 
   //4)
   Voter.find().sort('-last').limit(1),
